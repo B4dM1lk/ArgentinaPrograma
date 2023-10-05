@@ -4,26 +4,15 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 public class BarajaDeCartas {
-    private List<Carta> cartas;
-    private List<Carta> cartasMonton;
+    private List<Carta> cartas = new ArrayList<Carta>();
+    private List<Carta> cartasMonton new ArrayList<Carta>();
 
     //Constructores
     public BarajaDeCartas(List<Carta> cartas, List<Carta> cartasMonton) {
         this.cartas = cartas;
         this.cartasMonton = cartasMonton;
     }
-    public BarajaDeCartas(){
-        this.cartasMonton = new ArrayList<Carta>();
-        this.cartas = new ArrayList<Carta>();
-        for(Palo palo : Palo.values()){
-            for(int j=1; j<=12;j++){
-                if(j==8||j==9){
-                    continue;
-                }
-                Carta nuevaCarta = new Carta(j, palo);
-                this.cartas.add(nuevaCarta);
-            }
-        }
+    public BarajaDeCartas(){      
     }
 
     //Setters
@@ -43,6 +32,17 @@ public class BarajaDeCartas {
     }
 
     //Metodos
+    public void armarBaraja(){
+        for(Palo palo : Palo.values()){
+            for(int j=1; j<=12;j++){
+                if(j==8||j==9){
+                    continue;
+                }
+                Carta nuevaCarta = new Carta(j, palo);
+                this.getCartas.add(nuevaCarta);
+            }
+        }
+    }
     @Override
     public String toString() {
         return "BarajaDeCartas{" +
